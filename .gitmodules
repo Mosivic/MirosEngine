@@ -1,0 +1,3 @@
+[submodule "Miros/vendor/spdlog"]
+	path = Miros/vendor/spdlog
+	url = https://github.com/gabime/spdlog
