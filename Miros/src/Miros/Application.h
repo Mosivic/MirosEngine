@@ -1,7 +1,6 @@
 #pragma once
 #include "Core.h"
 
-
 namespace Miros {
 	class MIROS_API Application
 	{

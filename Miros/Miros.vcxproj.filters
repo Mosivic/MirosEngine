@@ -4,6 +4,9 @@
     <Filter Include="Miros">
       <UniqueIdentifier>{6FE6AB0D-DBFA-D3BE-A47C-771E1050D0EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Miros\Events">
+      <UniqueIdentifier>{731F8E00-5F82-1DA5-0808-565BF449E927}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Miros.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Miros\EntryPoint.h">
       <Filter>Miros</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Miros\Events\AppicationEvent.h">
+      <Filter>Miros\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Miros\Events\Event.h">
+      <Filter>Miros\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Miros\Events\KeyEvent.h">
+      <Filter>Miros\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Miros\Events\MouseEvent.h">
+      <Filter>Miros\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Miros\Log.h">
       <Filter>Miros</Filter>

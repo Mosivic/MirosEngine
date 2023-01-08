@@ -150,6 +150,10 @@
     <ClInclude Include="src\Miros\Application.h" />
     <ClInclude Include="src\Miros\Core.h" />
     <ClInclude Include="src\Miros\EntryPoint.h" />
+    <ClInclude Include="src\Miros\Events\AppicationEvent.h" />
+    <ClInclude Include="src\Miros\Events\Event.h" />
+    <ClInclude Include="src\Miros\Events\KeyEvent.h" />
+    <ClInclude Include="src\Miros\Events\MouseEvent.h" />
     <ClInclude Include="src\Miros\Log.h" />
   </ItemGroup>
   <ItemGroup>
