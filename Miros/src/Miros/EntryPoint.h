@@ -6,7 +6,11 @@
 extern Miros::Application* Miros::CreateApplication();
 
 int main(int argc, char** argv) {
-	printf("Miro Engine.\n");
+
+	Miros::Log::Init();
+	MRS_CORE_WARN("Initialized Log!");
+	MRS_CORE_INFO("Hello");
+
 	auto app = Miros::CreateApplication();
 	app->Run();
 	delete app;

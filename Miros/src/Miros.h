@@ -3,8 +3,8 @@
 
 
 //For use By Miros Appication
-#include <stdio.h>
 #include "Miros/Application.h"
+#include "Miros/Log.h"
 
 //---Entry Point---
 #include "Miros/EntryPoint.h"
