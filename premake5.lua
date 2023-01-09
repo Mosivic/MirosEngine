@@ -9,6 +9,12 @@ workspace "Miros"
 	}
 	outputdir="%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+	--Include directories to root folder (solution directory) 
+	IncludeDir = {}
+	IncludeDir["GLFW"] = "Miros/vendor/GLFW/include"
+
+	include "Miros/vendor/GLFW"
+
 project "Miros"
 	location "Miros"
 	kind "SharedLib"
@@ -26,7 +32,15 @@ project "Miros"
 	includedirs
 	{
 		"%{prj.name}/vendor/spdlog/include",
-		"%{prj.name}/src/Miros/vendor/spdlog/include"
+		"%{prj.name}/src/Miros/vendor/spdlog/include",
+		"%{prj.name}/src/Miros/vendor/GLFW/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -38,6 +52,7 @@ project "Miros"
 		{
 			"_DEBUG",
 			"_CONSOLE",
+			"_WINDLL",
 			"MRS_PLATFORM_WINDOWS",
 			"MRS_BUILD_DLL",
 		}

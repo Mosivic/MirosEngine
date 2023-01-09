@@ -27,9 +27,9 @@ namespace Miros {
 #define  MRS_CORE_FATAL(...) Miros::Log::GetCoreLogger()->fatal(__VA_ARGS__)
 
 //Client Log maccors
-#define  MRS_CLIENT_ERROR(...) Miros::Log::GetClientLogger()->error(__VA_ARGS__)
-#define  MRS_CLEINT_INFO(...)  Miros::Log::GetClientLogger()->info(__VA_ARGS__)
-#define  MRS_CLIENT_WARN(...)  Miros::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define  MRS_CLIENT_TRACE(...) Miros::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define  MRS_CLIENT_FATAL(...) Miros::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define  MRS_ERROR(...) Miros::Log::GetClientLogger()->error(__VA_ARGS__)
+#define  MRS_INFO(...)  Miros::Log::GetClientLogger()->info(__VA_ARGS__)
+#define  MRS_WARN(...)  Miros::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define  MRS_TRACE(...) Miros::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define  MRS_FATAL(...) Miros::Log::GetClientLogger()->fatal(__VA_ARGS__)
 

@@ -7,6 +7,9 @@
     <Filter Include="Miros\Events">
       <UniqueIdentifier>{731F8E00-5F82-1DA5-0808-565BF449E927}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Miros\Platform">
+      <UniqueIdentifier>{A3CFB178-8F9D-A57E-7831-16A5649E81E3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Miros.h" />
@@ -34,6 +37,12 @@
     <ClInclude Include="src\Miros\Log.h">
       <Filter>Miros</Filter>
     </ClInclude>
+    <ClInclude Include="src\Miros\Platform\WindowsWindow.h">
+      <Filter>Miros\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Miros\Window.h">
+      <Filter>Miros</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Miros\Application.cpp">
@@ -41,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="src\Miros\Log.cpp">
       <Filter>Miros</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Miros\Platform\WindowsWindow.cpp">
+      <Filter>Miros\Platform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
