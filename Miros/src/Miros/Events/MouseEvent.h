@@ -4,7 +4,7 @@
 
 namespace Miros {
 
-	class MIROS_API MouseMovedEvent : Event {
+	class MIROS_API MouseMovedEvent : public Event {
 	private:
 		float m_MouseX, m_MouseY;
 	public:
@@ -21,13 +21,12 @@ namespace Miros {
 			return ss.str();
 		}
 
-		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
-		
+		EVENT_CLASS_TYPE(MouseMoved)
 	};
 
 
-	class MIROS_API MouseScrolledEvent : Event {
+	class MIROS_API MouseScrolledEvent : public Event {
 	private:
 		float m_XOffset, m_YOffset;
 	public:
@@ -73,6 +72,20 @@ namespace Miros {
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonPressed)
+	};
+
+	class MIROS_API MouseButtonReleasedEvent : public MouseButtonEvent {
+	public:
+		MouseButtonReleasedEvent(int button)
+			: MouseButtonEvent(button) {}
+
+		std::string ToString() const override {
+			std::stringstream ss;
+			ss << "MouseButtonReleased: " << m_Button;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
 
 }
