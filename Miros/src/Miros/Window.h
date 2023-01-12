@@ -7,7 +7,6 @@
 
 namespace Miros {
 
-
 	struct  WindowProps
 	{
 		std::string Title;

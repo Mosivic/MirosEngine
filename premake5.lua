@@ -12,8 +12,12 @@ workspace "Miros"
 	--Include directories to root folder (solution directory) 
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "Miros/vendor/GLFW/include"
+	IncludeDir["GLAD"] = "Miros/vendor/GLAD/include"
 
+	--包含项目
 	include "Miros/vendor/GLFW"
+	include "Miros/vendor/GLAD"
+
 
 project "Miros"
 	location "Miros"
@@ -23,23 +27,20 @@ project "Miros"
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
 
-	files
-	{
+	files{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/src/**.hpp"
 	}
-	includedirs
-	{
+	includedirs{
+		"%{prj.name}/src/",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{prj.name}/src/Miros/vendor/spdlog/include",
-		"%{prj.name}/src/Miros/vendor/GLFW/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.GLAD}"
 	}
-
-	links
-	{
+	links{
 		"GLFW",
+		"GLAD",
 		"opengl32.lib"
 	}
 
@@ -48,18 +49,18 @@ project "Miros"
 		staticruntime "On"
 		systemversion "latest"
 
-		defines
-		{
+		defines{
 			"_DEBUG",
 			"_CONSOLE",
 			"_WINDLL",
 			"MRS_PLATFORM_WINDOWS",
 			"MRS_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
-		postbuildcommands
-		{
+		postbuildcommands{
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/".. outputdir .."/SandBox")
 		}
+
 	-- 过滤器 Debug配置 仅适用于Debug
 	filter "configurations:Debug"
 		defines "MRS_DEBUG"

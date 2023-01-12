@@ -8,6 +8,8 @@
 #include "../Events/MouseEvent.h"
 #include "../Events/Event.h"
 
+#include "glad/glad.h"
+
 namespace Miros {
 
 
@@ -60,7 +62,7 @@ namespace Miros {
 		m_Data.Height = props.Height;
 
 		MRS_CORE_INFO("Create window {0} {1} {2}", props.Title, props.Width, props.Height);
-	
+		
 		if (!s_GLFWInitialized) {
 			int success = glfwInit();
 			MRS_CORE_ASSERT(success, "Could not initialize GLFW!");
@@ -72,6 +74,9 @@ namespace Miros {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
