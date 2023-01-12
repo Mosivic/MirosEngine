@@ -82,7 +82,7 @@
       <AdditionalIncludeDirectories>vendor\spdlog\include;src\Miros\vendor\spdlog\include;src\Miros\vendor\GLFW\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -149,6 +149,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Miros\Layer.h" />
+    <ClInclude Include="src\Miros\LayerStack.h" />
     <ClInclude Include="src\Miros.h" />
     <ClInclude Include="src\Miros\Application.h" />
     <ClInclude Include="src\Miros\Core.h" />
@@ -162,6 +164,8 @@
     <ClInclude Include="src\Miros\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Miros\Layer.cpp" />
+    <ClCompile Include="src\Miros\LayerStack.cpp" />
     <ClCompile Include="src\Miros\Application.cpp" />
     <ClCompile Include="src\Miros\Log.cpp" />
     <ClCompile Include="src\Miros\Platform\WindowsWindow.cpp" />

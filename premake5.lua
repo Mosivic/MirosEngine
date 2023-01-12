@@ -60,16 +60,21 @@ project "Miros"
 		{
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/".. outputdir .."/SandBox")
 		}
-
+	-- 过滤器 Debug配置 仅适用于Debug
 	filter "configurations:Debug"
 		defines "MRS_DEBUG"
 		symbols "On"
+		buildoptions "/MDd"
+	-- 过滤器 Release配置
 	filter "configurations:Release"
 		defines "MRS_RELEASE"
 		optimize "On"
+		buildoptions "/MD"
+	-- 过滤器 Dist配置
 	filter "configurations:Dist"
 		defines "MRS_DIST"
 		optimize "On"
+		buildoptions "/MD"
 
 
 project "SandBox"
@@ -109,9 +114,12 @@ project "SandBox"
 	filter "configurations:Debug"
 		defines "MRS_DEBUG"
 		symbols "On"
+		buildoptions "/MDd"
 	filter "configurations:Release"
 		defines "MRS_RELEASE"
 		optimize "On"
+		buildoptions "/MD"
 	filter "configurations:Dist"
 		defines "MRS_DIST"
 		optimize "On" 
+		buildoptions "/MD"

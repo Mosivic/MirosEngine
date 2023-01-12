@@ -43,6 +43,8 @@
     <ClInclude Include="src\Miros\Window.h">
       <Filter>Miros</Filter>
     </ClInclude>
+    <ClInclude Include="src\Miros\Layer.h" />
+    <ClInclude Include="src\Miros\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Miros\Application.cpp">
@@ -54,5 +56,7 @@
     <ClCompile Include="src\Miros\Platform\WindowsWindow.cpp">
       <Filter>Miros\Platform</Filter>
     </ClCompile>
+    <ClCompile Include="src\Miros\Layer.cpp" />
+    <ClCompile Include="src\Miros\LayerStack.cpp" />
   </ItemGroup>
 </Project>
